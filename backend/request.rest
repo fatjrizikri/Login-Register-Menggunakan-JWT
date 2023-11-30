@@ -1,0 +1,12 @@
+GET http://localhost:5000/users
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+{
+    "name": "Fatjri Zikri",
+    "email": "fatjri@gmail.com",
+    "number_phone": "081268556140",
+    "password": "1234",
+    "confPassword": "1234"
+}
