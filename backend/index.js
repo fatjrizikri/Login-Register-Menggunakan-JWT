@@ -1,7 +1,9 @@
 import express from "express";
 import db from "./config/Databese.js";
+import dotenv from "dotenv";
 // import Users from "./model/UserModel.js";
 import router from "./routes/router.js";
+dotenv.config();
 const app = express();
 try {
     await db.authenticate();
