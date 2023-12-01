@@ -1,15 +1,18 @@
 import Users from "../model/UserModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+// Get Users
 export const getUsers = async(req, res) => {
     try {
-        const users = await Users.findAll();
+        const users = await Users.findAll({
+            attributes: ['id', 'name', 'email', 'number'] 
+        });
         res.json(users);
     } catch (error) {
         console.log(error);
     }
 }
-
+// Register
 export const Register = async(req, res) => {
     const { name, email, number_phone, password, confPassword } = req.body;
     if (password !== confPassword ) {
@@ -35,7 +38,7 @@ export const Register = async(req, res) => {
         console.log(error);
     }
 }
-
+// Login
 export const Login = async(req, res) => {
     try {
         const user =  await Users.findAll({
@@ -89,3 +92,27 @@ export const Login = async(req, res) => {
         });
     }
 }
+// Logout
+export const Logout = async(req, res) => {
+    const refreshToken = req.cookies.refreshToken;
+    if (!refreshToken){
+        return res.sendStatus(204);
+    }
+    const user = await Users.findAll({
+        where:{
+            refresh_token: refreshToken
+        }
+    });
+    if (!user[0]){
+        return res.sendStatus(204);
+    }
+    const userId = user[0].id;
+    await Users.update({refresh_token: null},{
+        where:{
+            id: userId
+        }
+     });
+    res.clearCookie('refreshToken');
+    return res.sendStatus(200);
+}
+

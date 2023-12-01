@@ -1,12 +1,28 @@
 GET http://localhost:5000/users
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWUiOiJGYXRqcmlaaWtyaSIsImVtYWlsIjoiZmF0anJpQGdtYWlsLmNvbSIsIm51bWJlciI6IjA4MTI2ODU1NjE0MCIsImlhdCI6MTcwMTM5ODUyNywiZXhwIjoxNzAxMzk4NTQ3fQ.A5SFI5Zhdr8Jj30X_M7vhE3LKIVDMzFIQ4uHJGbTeTY
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
+
 {
-    "name": "Fatjri Zikri",
+    "name": "FatjriZikri",
     "email": "fatjri@gmail.com",
     "number_phone": "081268556140",
     "password": "1234",
     "confPassword": "1234"
 }
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "fatjri@gmail.com",
+    "password": "1234"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
