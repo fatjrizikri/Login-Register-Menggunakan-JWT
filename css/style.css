@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root{
+    --shadow-color: #656d72;
+    --black-color: #000;
+    --white-color: #fff;
+
+    --line-color: #d9d9d9;
+    --primary-background: #fff;
+    --secondary-background: #fbfbfb;
+    --third-background: #f5f3fe;
+
+    --primary-icon-color: #57D6FF;
+    --primary-icon-colorHover: #0087FF;
+
+    --section-panding: 6rem 0;
+    --item-boder-radius: 0.7rem;
+}
+
+/* Login */
+.container-access{
+  background-color: #f5f3fe;
+  font-family: 'Poppins';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+.box{
+  background-color: var(--secondary-background);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+.form-box {
+  width: 450px;
+  margin: 0px 10px;
+}
+.form-box header{
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-color);
+  margin-bottom: 10px;
+}
+.user_type_access{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 1rem;
+  font-size: 15px;
+}
+select{
+  height: auto;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  border: 1px solid #ccc;
+}
+.form-box form .field{
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.form-box form .input input{
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  /* outline:  none; */
+}
+.btn{
+  height: 35px;
+  background: #979798;
+  border: 0;
+  border-radius: 5px;
+  color: var(--primary-background);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 3s;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.btn:hover{
+  background: var(--primary-icon-color);
+  opacity: 0.82;
+}
+.submit{
+  width: 100%;
+}
+.links{
+  margin-bottom: 15px;
+}
