@@ -11,7 +11,7 @@ const Register = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const Register = async (e) => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/users', {
@@ -35,7 +35,7 @@ const Register = () => {
         <div className="container">
           <div className="columns is-centered">
             <div className="column is-4-desktop">
-              <form onSubmit={handleSubmit} className='box'>
+              <form onSubmit={Register} className='box'>
               <p className='has-text-centered'>{message}</p>
                 <div className="field mt-5">
                   <label className='label'>Username</label>
